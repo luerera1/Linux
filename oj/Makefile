@@ -1,3 +1,9 @@
+oj_server:oj_server.cc oj_model.hpp oj_view.hpp
+	g++ oj_server.cc -o oj_server -std=c++11 -lpthread -ljsoncpp -lctemplate \
+									   -I ~/third_part/include -L ~/third_part/lib
+compiler_server:compiler_server.cc compile.hpp
+	g++ compiler_server.cc -o compiler_server -std=c++11 -lpthread -ljsoncpp
+
 test:test.cc
 	g++ test.cc -o test -std=c++11 -lpthread  -ljsoncpp
 .PHONY:clean
